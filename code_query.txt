@@ -1,0 +1,7 @@
+select product_name,partner_name,partner_ref, sum(daily_sales_qty) as qty
+from bivi_watsons_sell_out 
+
+where year >= 2021 and
+partner_name like 'WATSONS MALL KOTA KASABLANKA (MKK)'
+group by product_name,partner_name, partner_ref
+order by qty desc;
